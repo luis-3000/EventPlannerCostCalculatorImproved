@@ -1,0 +1,1 @@
+c:\users\jose luis castillo\documents\visual studio 2013\Projects\EventPlannerCostCalculatorImproved\EventPlannerCostCalculatorImproved\bin\Debug\EventPlannerCostCalculatorImproved.exe.config
