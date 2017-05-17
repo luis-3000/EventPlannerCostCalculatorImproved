@@ -30,25 +30,25 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.costLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.healthyBox = new System.Windows.Forms.CheckBox();
             this.fancyBox = new System.Windows.Forms.CheckBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cakeWriting = new System.Windows.Forms.TextBox();
+            this.tooLongLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.birthdayCost = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.fancyBirthday = new System.Windows.Forms.CheckBox();
             this.numberBirthday = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tooLongLabel = new System.Windows.Forms.Label();
-            this.cakeWriting = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberBirthday)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,24 +77,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dinner Party";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.cakeWriting);
-            this.tabPage2.Controls.Add(this.tooLongLabel);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.birthdayCost);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.fancyBirthday);
-            this.tabPage2.Controls.Add(this.numberBirthday);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(279, 237);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Birthday Party";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // costLabel
             // 
@@ -176,6 +158,53 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Number of People";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.cakeWriting);
+            this.tabPage2.Controls.Add(this.tooLongLabel);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.birthdayCost);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.fancyBirthday);
+            this.tabPage2.Controls.Add(this.numberBirthday);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(279, 237);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Birthday Party";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // cakeWriting
+            // 
+            this.cakeWriting.Location = new System.Drawing.Point(27, 147);
+            this.cakeWriting.Name = "cakeWriting";
+            this.cakeWriting.Size = new System.Drawing.Size(240, 20);
+            this.cakeWriting.TabIndex = 14;
+            this.cakeWriting.Text = "Happy Birthday";
+            this.cakeWriting.TextChanged += new System.EventHandler(this.cakeWriting_TextChanged);
+            // 
+            // tooLongLabel
+            // 
+            this.tooLongLabel.AutoSize = true;
+            this.tooLongLabel.BackColor = System.Drawing.Color.Red;
+            this.tooLongLabel.Location = new System.Drawing.Point(103, 113);
+            this.tooLongLabel.Name = "tooLongLabel";
+            this.tooLongLabel.Size = new System.Drawing.Size(63, 13);
+            this.tooLongLabel.TabIndex = 13;
+            this.tooLongLabel.Text = "TOO LONG";
+            this.tooLongLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(23, 113);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Cake Writing";
+            // 
             // birthdayCost
             // 
             this.birthdayCost.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -208,6 +237,7 @@
             this.fancyBirthday.TabIndex = 8;
             this.fancyBirthday.Text = "Fancy Decorations";
             this.fancyBirthday.UseVisualStyleBackColor = true;
+            this.fancyBirthday.CheckedChanged += new System.EventHandler(this.fancyBirthday_CheckedChanged);
             // 
             // numberBirthday
             // 
@@ -231,6 +261,7 @@
             0,
             0,
             0});
+            this.numberBirthday.ValueChanged += new System.EventHandler(this.numberBirthday_ValueChanged);
             // 
             // label5
             // 
@@ -241,34 +272,6 @@
             this.label5.Size = new System.Drawing.Size(92, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "Number of People";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 113);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Cake Writing";
-            // 
-            // tooLongLabel
-            // 
-            this.tooLongLabel.AutoSize = true;
-            this.tooLongLabel.BackColor = System.Drawing.Color.Red;
-            this.tooLongLabel.Location = new System.Drawing.Point(103, 113);
-            this.tooLongLabel.Name = "tooLongLabel";
-            this.tooLongLabel.Size = new System.Drawing.Size(63, 13);
-            this.tooLongLabel.TabIndex = 13;
-            this.tooLongLabel.Text = "TOO LONG";
-            this.tooLongLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // cakeWriting
-            // 
-            this.cakeWriting.Location = new System.Drawing.Point(27, 147);
-            this.cakeWriting.Name = "cakeWriting";
-            this.cakeWriting.Size = new System.Drawing.Size(240, 20);
-            this.cakeWriting.TabIndex = 14;
-            this.cakeWriting.Text = "Happy Birthday";
             // 
             // Form1
             // 
@@ -281,9 +284,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberBirthday)).EndInit();
             this.ResumeLayout(false);
 

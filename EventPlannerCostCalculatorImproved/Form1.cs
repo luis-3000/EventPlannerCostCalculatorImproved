@@ -14,6 +14,8 @@ namespace EventPlannerCostCalculatorImproved
     {
         DinnerParty dinnerParty;
 
+        BirthdayParty birthdayParty;
+
         /* This new version allows the form to store an instance of DinnerParty and updates its properties
          * every time the number of people or party options change. */
         public Form1()
@@ -21,6 +23,9 @@ namespace EventPlannerCostCalculatorImproved
             InitializeComponent();
             dinnerParty = new DinnerParty((int)numericUpDown1.Value, healthyBox.Checked, fancyBox.Checked);
             DisplayDinnerPartyCost();
+
+            birthdayParty = new BirthdayParty((int)numberBirthday.Value, fancyBirthday.Checked, cakeWriting.Text);
+            DisplayBirthdayPartyCost();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -54,6 +59,31 @@ namespace EventPlannerCostCalculatorImproved
         {
             decimal Cost = dinnerParty.Cost;
             costLabel.Text = Cost.ToString("c"); // 'c' tells it to format the cost as a currency value shown as dollar amounts
+        }
+
+        private void numberBirthday_ValueChanged(object sender, EventArgs e)
+        {
+            birthdayParty.NumberOfPeople = (int)numberBirthday.Value;
+            DisplayBirthdayPartyCost();
+        }
+
+        private void fancyBirthday_CheckedChanged(object sender, EventArgs e)
+        {
+            birthdayParty.FancyDecorations = fancyBirthday.Checked;
+            DisplayBirthdayPartyCost();
+        }
+
+        private void cakeWriting_TextChanged(object sender, EventArgs e)
+        {
+            birthdayParty.CakeWriting = cakeWriting.Text;
+            DisplayBirthdayPartyCost();
+        }
+
+        private void DisplayBirthdayPartyCost()
+        {
+            tooLongLabel.Visible = birthdayParty.CakeWritingTooLong;
+            decimal cost = birthdayParty.Cost;
+            birthdayCost.Text = cost.ToString("c");
         }
 
 
