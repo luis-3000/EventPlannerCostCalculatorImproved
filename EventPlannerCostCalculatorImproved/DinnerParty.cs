@@ -81,6 +81,11 @@ namespace EventPlannerCostCalculatorImproved
                     totalCost *= 0.95M; // Apply the 5% discount to the overall event cost if the non-alcoholic option was chosen
                 }
 
+                if (NumberOfPeople > 12)
+                {
+                    decimal extraFee = 100;
+                    return totalCost + extraFee;
+                }
                 return totalCost;
             }
 

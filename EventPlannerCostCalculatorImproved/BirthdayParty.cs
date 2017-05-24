@@ -93,6 +93,12 @@ namespace EventPlannerCostCalculatorImproved
                     cakeCost = 40M + ActualLength * .25M;
                 else
                     cakeCost = 75M + ActualLength * .25M;
+
+                if (NumberOfPeople > 12)
+                {
+                    decimal extraFee = 100;
+                    return totalCost + extraFee;
+                }
                 return totalCost + cakeCost;
             }
         }
